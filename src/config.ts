@@ -10,13 +10,22 @@ export const config = {
   image: `${import.meta.env.BASE_URL}save-the-date.jpg`, // swap for your own picture (square works best)
 
   hintDelayMs: 8000, // how long before the puzzle nudges a stuck guest
+  skipAfterMisses: 8, // wrong swaps before the "just show me the date" link appears
 
   intro: {
     eyebrow: 'Psst…',
     title: 'We have news',
     body: 'Unscramble our photo to reveal it',
     // prompt: "Tap two tiles to swap them",
-    skip: 'Just show me the date',
+    skip: 'I give up, just show me.',
+  },
+
+  // Shown when a guest taps the skip link.
+  giveUp: {
+    title: 'Giving up already?',
+    message: 'Are you sure you want to give up? We think you can do it.',
+    confirm: 'Yes, show me',
+    cancel: 'No, keep trying',
   },
 
   // Little remarks under the puzzle. Rewrite these in your own voice!

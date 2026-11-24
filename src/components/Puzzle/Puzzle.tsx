@@ -13,7 +13,7 @@ import type { PuzzleProps } from './Puzzle.types.ts'
 
 const SOLVED_DELAY_MS = 1400
 
-export default function Puzzle({ onSolved }: PuzzleProps) {
+export default function Puzzle({ onSolved, onMiss }: PuzzleProps) {
   const [tiles, setTiles] = useState(() => makeShuffled())
   const [selected, setSelected] = useState<number | null>(null)
   const [hint, setHint] = useState<[number, number] | null>(null)
@@ -57,6 +57,7 @@ export default function Puzzle({ onSolved }: PuzzleProps) {
       setDone(true)
       return
     }
+    if (!improved) onMiss?.()
     const list = improved ? config.quips.good : config.quips.meh
     setQuip(list[quipCount.current % list.length])
     quipCount.current += 1

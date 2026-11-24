@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { TextButton, Wrap } from './components/ui/index.ts'
 
 export const Page = styled(Wrap)`
   min-height: 100vh;
+  min-height: 100dvh; /* excludes the phone browser's collapsing toolbars */
   padding: 32px 16px 40px;
 `
 
@@ -35,6 +36,16 @@ export const Prompt = styled.p`
   opacity: 0.6;
 `
 
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 0.6; }
+`
+
 export const SkipButton = styled(TextButton)`
   margin-top: 28px;
+  animation: ${fadeIn} 0.8s ease both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 `
