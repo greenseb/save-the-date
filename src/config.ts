@@ -20,6 +20,14 @@ export const config = {
     skip: 'I give up, just show me.',
   },
 
+  // Shown when a guest taps the skip link.
+  giveUp: {
+    title: 'Giving up already?',
+    message: 'Are you sure you want to give up? We think you can do it.',
+    confirm: 'Yes, show me',
+    cancel: 'No, keep trying',
+  },
+
   // Little remarks under the puzzle. Rewrite these in your own voice!
   quips: {
     start: 'Tap a tile, then tap another to swap them.',

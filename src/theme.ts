@@ -9,6 +9,7 @@ export const theme = {
     accentSoft: '#ffb3c6',
     card: '#ffffff',
     onAccent: '#ffffff',
+    overlay: 'rgba(74, 44, 42, 0.45)',
   },
   fonts: {
     body: "'Nunito', system-ui, sans-serif",
