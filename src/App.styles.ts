@@ -3,6 +3,7 @@ import { TextButton, Wrap } from './components/ui/index.ts'
 
 export const Page = styled(Wrap)`
   min-height: 100vh;
+  min-height: 100dvh; /* excludes the phone browser's collapsing toolbars */
   padding: 32px 16px 40px;
 `
 
