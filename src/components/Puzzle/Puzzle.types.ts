@@ -1,3 +1,3 @@
 export interface PuzzleProps {
-  onSolved: () => void;
+  onSolved: () => void
 }

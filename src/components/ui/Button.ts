@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PrimaryButton = styled.button`
   padding: 14px 26px;
@@ -15,7 +15,7 @@ export const PrimaryButton = styled.button`
   &:active {
     transform: scale(0.97);
   }
-`;
+`
 
 export const TextButton = styled.button`
   padding: 8px 12px;
@@ -26,4 +26,4 @@ export const TextButton = styled.button`
   text-decoration: underline;
   opacity: 0.6;
   cursor: pointer;
-`;
+`

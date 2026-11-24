@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { config } from '../../config.ts';
-import { downloadIcs, formatDateRange } from '../../utils/calendar.ts';
-import { Photo } from '../ui/index.ts';
+import { useMemo } from 'react'
+import { config } from '../../config.ts'
+import { downloadIcs, formatDateRange } from '../../utils/calendar.ts'
+import { Photo } from '../ui/index.ts'
 import {
   CalendarButton,
   Confetti,
@@ -11,10 +11,10 @@ import {
   Names,
   Note,
   Wrap,
-} from './Reveal.styles.ts';
-import type { ConfettiPiece } from './Reveal.types.ts';
+} from './Reveal.styles.ts'
+import type { ConfettiPiece } from './Reveal.types.ts'
 
-const PIECES = ['💕', '💍', '✨', '🥂', '💖'];
+const PIECES = ['💕', '💍', '✨', '🥂', '💖']
 
 export default function Reveal() {
   const pieces = useMemo<ConfettiPiece[]>(
@@ -28,9 +28,9 @@ export default function Reveal() {
         size: 18 + Math.random() * 18,
       })),
     [],
-  );
+  )
 
-  const { names, date, eventTitle, image, reveal } = config;
+  const { names, date, eventTitle, image, reveal } = config
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function Reveal() {
         </Photo>
         <Heading>{reveal.heading}</Heading>
         <Names>
-          {names[0]} &amp; {names[1]}
+          {names[0]} &amp; {names[1]} 💍
         </Names>
         <DateText>{formatDateRange(date)}</DateText>
         <Note>{reveal.note}</Note>
@@ -66,5 +66,5 @@ export default function Reveal() {
         <Footer>{reveal.footer}</Footer>
       </Wrap>
     </>
-  );
+  )
 }

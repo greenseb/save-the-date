@@ -1,1 +1,1 @@
-export { default as Puzzle } from './Puzzle.tsx';
+export { default as Puzzle } from './Puzzle.tsx'

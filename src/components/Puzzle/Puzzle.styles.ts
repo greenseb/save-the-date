@@ -1,10 +1,10 @@
-import styled, { css, keyframes } from 'styled-components';
-import { COLS, ROWS } from '../../utils/puzzle.ts';
+import styled, { css, keyframes } from 'styled-components'
+import { COLS, ROWS } from '../../utils/puzzle.ts'
 
 const pulse = keyframes`
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.07); }
-`;
+`
 
 export const Board = styled.div<{ $done: boolean }>`
   display: grid;
@@ -18,13 +18,13 @@ export const Board = styled.div<{ $done: boolean }>`
   border-radius: ${({ theme }) => theme.radius.lg};
   box-shadow: ${({ theme }) => theme.shadows.card};
   transition: gap 0.6s ease, padding 0.6s ease;
-`;
+`
 
 interface TileProps {
-  $done: boolean;
-  $correct: boolean;
-  $selected: boolean;
-  $hint: boolean;
+  $done: boolean
+  $correct: boolean
+  $selected: boolean
+  $hint: boolean
 }
 
 export const Tile = styled.button<TileProps>`
@@ -70,7 +70,7 @@ export const Tile = styled.button<TileProps>`
     animation: none;
     transition: none;
   }
-`;
+`
 
 export const Quip = styled.p`
   min-height: 1.6em;
@@ -78,4 +78,4 @@ export const Quip = styled.p`
   font-family: ${({ theme }) => theme.fonts.script};
   font-size: 1.7rem;
   text-align: center;
-`;
+`

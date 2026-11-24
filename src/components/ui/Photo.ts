@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Photo = styled.div`
   width: min(80vw, 320px);
@@ -14,4 +14,4 @@ export const Photo = styled.div`
     aspect-ratio: 1;
     object-fit: cover;
   }
-`;
+`
