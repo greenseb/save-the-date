@@ -7,7 +7,9 @@ import GlobalStyle from './GlobalStyle.ts'
 
 export default function App() {
   const [revealed, setRevealed] = useState(false)
+  const [misses, setMisses] = useState(0)
   const handleSolved = useCallback(() => setRevealed(true), [])
+  const handleMiss = useCallback(() => setMisses((n) => n + 1), [])
   const { intro } = config
 
   return (
@@ -20,10 +22,12 @@ export default function App() {
           <Eyebrow>{intro.eyebrow}</Eyebrow>
           <Title>{intro.title}</Title>
           <Body>{intro.body}</Body>
-          <Puzzle onSolved={handleSolved} />
-          <SkipButton type="button" onClick={handleSolved}>
-            {intro.skip}
-          </SkipButton>
+          <Puzzle onSolved={handleSolved} onMiss={handleMiss} />
+          {misses >= config.skipAfterMisses && (
+            <SkipButton type="button" onClick={handleSolved}>
+              {intro.skip}
+            </SkipButton>
+          )}
         </Page>
       )}
     </>

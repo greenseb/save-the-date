@@ -10,13 +10,14 @@ export const config = {
   image: `${import.meta.env.BASE_URL}save-the-date.jpg`, // swap for your own picture (square works best)
 
   hintDelayMs: 8000, // how long before the puzzle nudges a stuck guest
+  skipAfterMisses: 8, // wrong swaps before the "just show me the date" link appears
 
   intro: {
     eyebrow: 'Psst…',
     title: 'We have news',
     body: 'Unscramble our photo to reveal it',
     // prompt: "Tap two tiles to swap them",
-    skip: 'Just show me the date',
+    skip: 'I give up, just show me.',
   },
 
   // Little remarks under the puzzle. Rewrite these in your own voice!
