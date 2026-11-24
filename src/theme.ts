@@ -26,6 +26,6 @@ export const theme = {
     lifted: '0 10px 20px rgba(74, 44, 42, 0.35)',
     button: '0 8px 18px rgba(230, 55, 98, 0.35)',
   },
-};
+}
 
-export type AppTheme = typeof theme;
+export type AppTheme = typeof theme

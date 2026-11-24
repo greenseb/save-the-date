@@ -1,6 +1,6 @@
 // Everything you'll want to personalise lives here.
 export const config = {
-  names: ["Sebastian", "Natasha"] as [string, string], // <- your names
+  names: ['Sebastian', 'Natasha'] as [string, string], // <- your names
   // First and last day of the celebration (inclusive). Month is 1-12.
   date: {
     start: { year: 2029, month: 5, day: 25 },
@@ -12,37 +12,25 @@ export const config = {
   hintDelayMs: 8000, // how long before the puzzle nudges a stuck guest
 
   intro: {
-    eyebrow: "Psst…",
-    title: "We have news",
-    body: "Someone scrambled our picture. Fix it to find out when.",
-    prompt: "Tap two tiles to swap them",
-    skip: "Just show me the date",
+    eyebrow: 'Psst…',
+    title: 'We have news',
+    body: 'Unscramble our photo to reveal it',
+    // prompt: "Tap two tiles to swap them",
+    skip: 'Just show me the date',
   },
 
   // Little remarks under the puzzle. Rewrite these in your own voice!
   quips: {
-    start: "Tap a tile, then tap another to swap them.",
-    good: [
-      "Ooh, that one fits.",
-      "Look at you go.",
-      "Nailed it.",
-      "Getting warmer…",
-      "Teamwork makes the dream work.",
-    ],
-    meh: [
-      "Hmm, not quite.",
-      "Bold choice.",
-      "Close, but no.",
-      "Trust the process.",
-      "We believe in you.",
-    ],
-    solved: "There you are.",
+    start: 'Tap a tile, then tap another to swap them.',
+    good: ['Yes diva!', 'Thank u, next', 'Well yes!'],
+    meh: ['Well no', "D'oh!", 'What the helly'],
+    solved: 'There you are.',
   },
 
   reveal: {
-    heading: "Save the date(s)",
-    note: "Formal invitation to follow.",
-    calendar: "Add to calendar",
-    footer: "Yes, you have to come. 💕",
+    heading: 'Save the date(s)',
+    note: 'Formal invitation to follow.',
+    calendar: 'Add to calendar',
+    footer: "Yes, it's a bank holiday. 💕",
   },
-};
+}

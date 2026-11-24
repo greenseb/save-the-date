@@ -1,1 +1,1 @@
-export { default as Reveal } from './Reveal.tsx';
+export { default as Reveal } from './Reveal.tsx'
