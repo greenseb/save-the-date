@@ -15,6 +15,10 @@ export const Dialog = styled.dialog`
   box-shadow: ${({ theme }) => theme.shadows.card};
   width: min(88vw, 360px);
 
+  &:focus {
+    outline: none;
+  }
+
   &[open],
   &[open]::backdrop {
     animation: ${fadeIn} 0.5s ease both;

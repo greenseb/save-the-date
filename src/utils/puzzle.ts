@@ -22,8 +22,9 @@ export function swap(tiles: Board, a: number, b: number): Board {
 }
 
 // Starts solved and applies a handful of random swaps, so a guest can always
-// finish in at most `swaps` moves. Re-rolls until enough tiles look wrong.
-export function makeShuffled(swaps = 5, minWrong = 5, rand: () => number = Math.random): Board {
+// finish in at most `swaps` moves. Re-rolls until enough tiles look wrong
+// (8 of 9 means at most one tile starts in the right place).
+export function makeShuffled(swaps = 5, minWrong = 8, rand: () => number = Math.random): Board {
   for (;;) {
     let tiles = solvedBoard()
     for (let s = 0; s < swaps; s += 1) {
