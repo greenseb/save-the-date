@@ -7,6 +7,16 @@ export const Page = styled(Wrap)`
   padding: 32px 16px 40px;
 `
 
+// Safari tints its top bar from a fixed element touching the top edge (it
+// ignores theme-color), so this strip matches the glow at the top of the page.
+export const TopTint = styled.div`
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: ${({ theme }) => theme.colors.bgGlow};
+  pointer-events: none;
+`
+
 export const Eyebrow = styled.p`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.script};

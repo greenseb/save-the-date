@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { Body, Eyebrow, Page, SkipButton, Title } from './App.styles.ts'
+import { Body, Eyebrow, Page, SkipButton, Title, TopTint } from './App.styles.ts'
 import { ConfirmDialog } from './components/ConfirmDialog/index.ts'
 import { Puzzle } from './components/Puzzle/index.ts'
 import { Reveal } from './components/Reveal/index.ts'
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <>
       <GlobalStyle />
+      <TopTint aria-hidden />
       {revealed ? (
         <Reveal />
       ) : (
