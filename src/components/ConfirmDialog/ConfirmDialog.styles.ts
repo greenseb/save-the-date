@@ -19,6 +19,14 @@ export const Dialog = styled.dialog`
     outline: none;
   }
 
+  /* iOS Safari ignores the dialog-level autofocus and focuses the first button
+     on open, drawing a ring. Keep the ring for keyboard users. */
+  @media (hover: none) {
+    button:focus {
+      outline: none;
+    }
+  }
+
   &[open],
   &[open]::backdrop {
     animation: ${fadeIn} 0.5s ease both;
