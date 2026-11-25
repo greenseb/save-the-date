@@ -20,7 +20,7 @@ test('makeShuffled is never solved and always has a valid permutation', () => {
       [...tiles].sort((a, b) => a - b),
       solvedBoard(),
     )
-    assert.ok(SIZE - countCorrect(tiles) >= 5)
+    assert.ok(SIZE - countCorrect(tiles) >= 8)
   }
 })
 
