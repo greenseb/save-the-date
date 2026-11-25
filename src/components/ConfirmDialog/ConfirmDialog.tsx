@@ -27,6 +27,9 @@ export default function ConfirmDialog({
     <Dialog
       ref={ref}
       aria-labelledby={titleId}
+      // Start focus on the dialog itself, so no button shows a focus ring on open.
+      tabIndex={-1}
+      autoFocus
       // Escape: let React state close it instead of the browser, so they stay in sync.
       onCancel={(e) => {
         e.preventDefault()
@@ -40,7 +43,7 @@ export default function ConfirmDialog({
         <Title id={titleId}>{title}</Title>
         <Message>{message}</Message>
         <Actions>
-          <PrimaryButton type="button" autoFocus onClick={onCancel}>
+          <PrimaryButton type="button" onClick={onCancel}>
             {cancelLabel}
           </PrimaryButton>
           <TextButton type="button" onClick={onConfirm}>
