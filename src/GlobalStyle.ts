@@ -5,17 +5,22 @@ export default createGlobalStyle`
 
   html, body, #root { min-height: 100%; margin: 0; }
 
-  /* The background sits on html (not body) with a solid base colour, so it
-     fills the whole screen, including the area behind the notch and over-scroll.
-     The first layer keeps the very top edge the glow colour across the full
-     width, matching the browser's theme-color, so there's no visible seam. */
+  /* iOS Safari tints its top bar from the page's base background-colour, so
+     html and body use the glow colour (the top of the page). The gradient
+     layers on body then paint the lighter base colour further down. */
   html {
-    background-color: ${({ theme }) => theme.colors.bg};
-    background-image: linear-gradient(to bottom, ${({ theme }) => theme.colors.bgGlow} 0%, transparent 25%), radial-gradient(circle at 20% 10%, ${({ theme }) => theme.colors.bgGlow} 0%, ${({ theme }) => theme.colors.bg} 55%);
-    background-repeat: no-repeat;
+    background-color: ${({ theme }) => theme.colors.bgGlow};
   }
 
   body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: ${({ theme }) => theme.colors.bgGlow};
+    background-image:
+      linear-gradient(to bottom, ${({ theme }) => theme.colors.bgGlow} 0%, transparent 25%),
+      radial-gradient(circle at 20% 10%, ${({ theme }) => theme.colors.bgGlow} 0%, ${({ theme }) => theme.colors.bg} 55%),
+      linear-gradient(${({ theme }) => theme.colors.bg}, ${({ theme }) => theme.colors.bg});
+    background-repeat: no-repeat;
     color: ${({ theme }) => theme.colors.ink};
     font-family: ${({ theme }) => theme.fonts.body};
     -webkit-tap-highlight-color: transparent;
